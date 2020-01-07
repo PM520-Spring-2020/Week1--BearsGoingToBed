@@ -33,10 +33,7 @@ Now we simulate the dwarves going to bed.
  
 for (iDwarves in LowestNumberOfDwarves:HighestNumberOfDwarves){
   HowManyDwarfsSleptInWrongBedThisTime<-NULL # This will store the number of dwarves that ended up in the wrong bed each time
-  for (j in 1:HowManySims){
-    # this might take a while, so we will get it to plot its progress using a progress bar
-    progress(j, max.value = HowManySims, progress.bar = TRUE)
-  
+  for (j in 1:HowManySims){  
     DoesLastDwarfSleepInCorrectBed<-0  # This will indicate whether the last dwarf sleeps in the correct bed in this particular realization
     for (j in 1:HowManySims){
       AvailableBeds<-1:iDwarves
