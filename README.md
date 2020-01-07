@@ -7,7 +7,6 @@ The Rmd file omits the descrtiption of the problem.
 Set up some global variables
 
 ```{r globals, echo=TRUE}
-library(svMisc)   # :scientific views" package - allows monitoring of code progress
 HowManySims<-1000   # the number of dwarf bedtimes to simulate
 LowestNumberOfDwarves<-7   # the smallest number of dwarves going to bed
 HighestNumberOfDwarves<-7
@@ -15,18 +14,11 @@ FirstDwarfMustPickWrongBed<-1   # If set to 1, always picks wrong bed; =0 then p
 ```
 
 Now we simulate the dwarves going to bed.
-There are a couple of bugs in this code:
-* First, it only seems to record the number of dwarves that slept in the wrong bed in the final simulation
-* Second, i added some code to plot a progress bar, but the progress bar is not displaying.
-Can you fix those bugs?
 ```{r bedtime}
  
 for (iDwarves in LowestNumberOfDwarves:HighestNumberOfDwarves){
+  HowManyDwarfsSleptInWrongBedThisTime<-NULL # This will store the number of dwarves that ended up in the wrong bed each time
   for (j in 1:HowManySims){
-    # this might take a while, so we will get it to plot its progress using a progress bar
-    progress(j, max.value = HowManySims, progress.bar = TRUE)
-  
-   HowManyDwarfsSleptInWrongBedThisTime<-NULL # This will store the number of dwarves that ended up in the wrong bed each time
     DoesLastDwarfSleepInCorrectBed<-0  # This will indicate whether the last dwarf sleeps in the correct bed in this particular realization
     for (j in 1:HowManySims){
       AvailableBeds<-1:iDwarves
