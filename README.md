@@ -1,6 +1,8 @@
 # Week1-BearsGoingToBed
 Code to simulate the 538 question about bears going to bed
 This document simulates the 7 dwarves problem from 538.com. 
+It is probably simplest to work from the Rmd file directly, rather than this readme.
+The Rmd file omits the descrtiption of the problem.
 
 Set up some global variables
 
